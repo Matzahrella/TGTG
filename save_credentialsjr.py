@@ -1,0 +1,14 @@
+import json
+
+# JR's credentials
+credentials = {
+    'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDY4OTE5NTQsImlhdCI6MTc0NjcxOTE1NCwiaXNzIjoidGd0Z19zb3RlcmlhIiwidCI6InJDOEZNajVmVG1XWnFLakZRNzFxQUE6MToxIiwic3ViIjoiMTMxODkyMTIyOTU1MDk1NTUzIn0.D14GalXnIqmPrxhMbjvijUivdmPiUxBzDRnNJyzC8jA',
+    'refresh_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzgyNTUxNTQsImlhdCI6MTc0NjcxOTE1NCwiaXNzIjoidGd0Z19zb3RlcmlhIiwidCI6Ik4zRVVSaTZBU3FHMmpmRS1LUFpYM0E6MTowIiwic3ViIjoiMTMxODkyMTIyOTU1MDk1NTUzIn0.Mi8wHEH1aRXgyF0qWJTPgnN3zE8oQlPzEuwXEF-3ziI',
+    'cookie': 'datadome=086S49dkmzhE5fGR83KoPc00VRAUAb6MTKa5VDjg20VTmpD7T2OkvINQ3Pf17d8rjQU8VZeWgebb0_wKGahhBIyn1NMlbQBm9~VzVdJXEUqRq1TrzZulq2h1Gx9uVDmo; Max-Age=5184000; Domain=.apptoogoodtogo.com; Path=/; Secure; SameSite=Lax'
+}
+
+# Save credentials to a JSON file
+with open("credentialsjr.json", "w") as f:
+    json.dump(credentials, f)
+
+print("Credentials saved to credentialsjr.json")
