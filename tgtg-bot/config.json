@@ -1,0 +1,15 @@
+{
+  "target_phone_numbers": [
+    "your_imessage_contact_1",
+    "your_imessage_contact_2"
+  ],
+  "base_poll_interval_seconds": 70,
+  "poll_interval_jitter_seconds": 10,
+  "captcha_cooldown_hours": 1,
+  "max_reservation_attempts": 3,
+  "tracked_store_ids_for_sellout": [
+    "953570"
+  ],
+  "accounts_path": "./accounts/",
+  "sellout_log_csv_path": "./sellout_log.csv"
+}
