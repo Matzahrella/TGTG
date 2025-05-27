@@ -21,10 +21,10 @@ class Request(BaseModel):
     #     return values
 
 class Response(BaseModel):
-    timestamp_end: float
+    timestamp_end: Optional[float] = None
     status_code: int
     headers: Dict[str, str]
-    body: Any = None # Body can be None, dict, str, or bytes
+    body: Optional[Any] = None # Body can be None, dict, str, or bytes
     content_type: Optional[str] = None
 
     # Pydantic v2 validator
@@ -65,18 +65,22 @@ if __name__ == '__main__':
 
     # Example Response Data
     res_data = {
-        "timestamp_end": 1678886401.5,
+        # "timestamp_end": 1678886401.5, # Timestamp end is now optional
         "status_code": 200,
         "headers": {"Content-Type": "application/json"},
         "body": {"status": "success", "data": {"id": 123}},
     }
     response_obj = Response(**res_data)
-    if response_obj.content_type is None:
+    if response_obj.content_type is None: # Manual content_type handling for example
         response_obj.content_type = response_obj.headers.get('Content-Type')
+    if response_obj.timestamp_end is None: # Example of adding it if missing
+        response_obj.timestamp_end = time.time() # Dummy value for example
     print("\nResponse Object:")
     print(response_obj.model_dump_json(indent=2))
 
     # Example HTTPFlow Data
+    # Need to import time for the example to run
+    import time
     http_flow_obj = HTTPFlow(
         request=request_obj,
         response=response_obj,
